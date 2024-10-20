@@ -21,6 +21,9 @@ div{
     display:flex;
     flex-flow:row wrap;
     justify-content: space-between;
+    &:hover {
+        background-color: #b6d4e8;
+    }
         button{
             right:10px; */
             display:block;
@@ -49,9 +52,7 @@ div{
             width:25px;
         }
 }
-div:hoover{
-    background-color: #b6d4e8;
-}
+
 `
 export default function ListContainer({taskList,deleteTask}){
     if (!taskList.length) { // length == 0
