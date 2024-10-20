@@ -1,47 +1,43 @@
-.checkGroup{
+/* .checkGroup{
     border: 1px solid #3d3d3d;
     width : 95%;
     cursor:pointer;
-    /* position:relative; */
     padding:10px;
     border-radius: 5px;
     margin-bottom:10px;
     display:flex;
     flex-flow:row wrap;
-    justify-content: space-between;
-    
-    
-}
-.checkGroup:hoover{
+    justify-content: space-between; 
+} */
+/* .checkGroup:hoover{
     background-color: #b6d4e8;
-}
-.label{
+} */
+/* .label{
     display:block;
     padding-left:20px;
     cursor:pointer;
     font-style: italic ;
     font-size:1.2rem;
     width:80%;
-}
-.checkInput:checked + .label{
+} */
+/* .checkInput:checked + .label{
     text-decoration:line-through;
-}
-.deleteButton{
-    /* position:absolute;
-    right:10px; */
+} */
+/* .deleteButton{
+  
     display:block;
     padding:0;
-    /* margin:1px;  */
+   
     cursor:pointer;
     border:none;  
-}
-.deleteButton > img{
+} */
+/* .deleteButton > img{
     max-width:26px;
     height: 100%;
     vertical-align: middle;
     background-color: white;
-}
-.checkInput{
+} */
+/* .checkInput{
     width:25px;
-}
+} */
 

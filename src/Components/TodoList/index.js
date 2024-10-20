@@ -1,15 +1,15 @@
 import { useState } from "react";
-import TodoItem from "../TodoItem";
-import CommonContainer from "../CommonContainer";
+import ListContainer from "../ListContainer";
+import InputComponent from "../InputComponent";
+import { CommonContainer,InputContainer, ThemeButton, TodoContainer } from "../CommonComponents";
 
 export default function TodoList(){
    const [taskList,setTaskList] = useState([]);
    const [inputValue,setInputValue] = useState('');
-   function addTask(task){
-    console.log("adding task: " + task);
-    setTaskList([...taskList, task]);
+   const [darkMode, setDarkMode] = useState(false);
+   function addTask(){
+   if(inputValue) {setTaskList([...taskList, inputValue])};
     setInputValue('');
-    console.log("task list is: " + taskList);
    }
    function handleInput(event){
       // console.log(event.target.value);
@@ -21,24 +21,28 @@ export default function TodoList(){
       const updatedTaskList = taskList.filter((_,index) => index !== indexToDelete);
       setTaskList(updatedTaskList);
    }
+   const handleDarkMode = () => {
+      setDarkMode(!darkMode)
+  }
     return (
-    <div>
-   <div style={{margin:"0 auto",width:"80%"}}>
-      <h1 style={{textTransform:'capitalize',fontSize:'3rem'}} >To Do List</h1>
-      <div style={{width:"90%",margin:"0 auto"}}>
-      <input style={{width:"calc(100% - 70px)",height:"30px",borderRadius:"5px",borderColor:"lightgray",fontSize:"1rem"}} value={inputValue} type="text" placeholder="New Task" onChange={handleInput}></input>
-      <button style={{marginLeft:"10px",height:"35px",width:"50px",backgroundColor:"#0096C7",color:"white",borderRadius:"5px",fontSize:"1rem",border:"none"}} onClick={() => addTask(inputValue)}>Add</button>
-      </div>
-   </div>
+      <CommonContainer darkTheme={darkMode}>
+         <ThemeButton style={{ position: 'fixed', top: 10, right: 10 }} onClick={handleDarkMode}>
+                  {darkMode ? 'Light mode' : 'Dark mode'}
+         </ThemeButton>
+         <TodoContainer>
+            <InputContainer>
+               <h1 >To Do List</h1>
+         
+               <InputComponent inputValue={inputValue} handleAddTask={addTask} handleChange={handleInput}/>
+         {/* <div >
+         <input  value={inputValue} type="text" placeholder="New Task" onChange={handleInput}></input>
+         <button  onClick={() => addTask(inputValue)}>Add</button>
+         </div> */}
 
-    <CommonContainer>
-      {
-         taskList.map((task,index) => (<TodoItem key={index} task={task} deleteTask={()=>deleteTask(index)} id={index}/>))
-      }
+            </InputContainer>
+
+            <ListContainer taskList={taskList} deleteTask={deleteTask}/>
+         </TodoContainer>
     </CommonContainer>
-
-    </div>
    ) 
-    
-
 }
