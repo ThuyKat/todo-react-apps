@@ -27,9 +27,14 @@ function Login(){
     }
     function handleOnSubmit(event){
         event.preventDefault();
+        // check if both username and password are provided
+        if(!formInput.username || !formInput.password){
+            alert('please enter username and password')
+            return;
+        }
         const match = userList.some(user=>user.username === formInput.username && user.password === formInput.password);
         setHasMatchingUser(match);
-        if(!match){
+        if(formInput && !match){
             alert('incorrect username or password')
         }else{
             setFormInput({
