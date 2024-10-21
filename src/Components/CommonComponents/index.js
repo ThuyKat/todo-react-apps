@@ -98,3 +98,11 @@ export const Form = styled.form`
     }
 
 `
+export const LogoutButton = styled.button`
+        padding: 5px 20px;
+        background-color:crimson;
+        border:none;
+        border-radius: 5px;
+        margin:0 auto;
+        color:white;
+`

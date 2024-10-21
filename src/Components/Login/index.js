@@ -15,6 +15,8 @@ function Login(){
         password:'pass2'
     }]);
     const [hasMatchingUser,setHasMatchingUser] = useState(false);
+    const [isLogin,setIsLogin] = useState(true);
+
     function handleInputChange(event){
         const{name,value} = event.target;
         setFormInput({
@@ -37,7 +39,7 @@ function Login(){
         }  
     }
     if(hasMatchingUser){
-        return <TodoList/> 
+        return <TodoList isLogin={isLogin} setIsLogin={setIsLogin}/> 
     }
     return(
         <FormContainer>
