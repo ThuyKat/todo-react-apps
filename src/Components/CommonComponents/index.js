@@ -54,3 +54,47 @@ export const ThemeButton = styled.button`
     border:none;
     border-radius: 5px;
 `
+export const FormContainer=styled.div`
+    margin:0 auto;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+`
+export const Form = styled.form`
+    padding:200px 20px;
+    min-width:300px;
+    background-color: #E6F7FF;
+    border-radius: 10px; 
+        div{
+        margin-bottom:10px;
+        display:flex;
+        justify-content:space-between;
+        gap:5px;
+        label{
+            color:darkblue;
+            font-weight:bolder;
+        }
+        input{
+            width:100%;
+            border-radius:5px;
+            border: solid 0.5px #F0F0F0 ;
+            height:25px;
+            
+        }
+    }
+    button{
+        display:block;
+        margin-left:auto;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius:5px;
+        &:hover {
+            background-color: #0056b3;
+        }
+    }
+
+`

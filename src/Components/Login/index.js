@@ -1,5 +1,6 @@
 import { useState } from "react";
 import TodoList from "../TodoList";
+import { FormContainer,Form } from "../CommonComponents";
 
 function Login(){
     const [formInput,setFormInput] = useState({
@@ -39,17 +40,21 @@ function Login(){
         return <TodoList/> 
     }
     return(
-        <div>
+        <FormContainer>
         
-        <form onSubmit={handleOnSubmit}>
+        <Form onSubmit={handleOnSubmit}>
+            <div>
             <label htmlFor="username">Username: </label>
             <input type="text" placeholder="Username" value={formInput.username} name="username" id="username" onChange={handleInputChange}/>
+            </div>
+            <div>
             <label htmlFor="password">Password: </label>
             <input type="password" placeholder="Password" value={formInput.password} name="password" id="password" onChange={handleInputChange}/>
+            </div>
             <button type="submit">Submit</button>
-        </form>
+        </Form>
         
-    </div>
+        </FormContainer>
     )
 }
 
