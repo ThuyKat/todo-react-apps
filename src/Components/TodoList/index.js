@@ -1,9 +1,10 @@
 import { useState } from "react";
 import ListContainer from "../ListContainer";
 import InputComponent from "../InputComponent";
-import { CommonContainer,InputContainer, ThemeButton, TodoContainer } from "../CommonComponents";
+import { CommonContainer,InputContainer, LogoutButton, ThemeButton, TodoContainer } from "../CommonComponents";
+import Login from "../Login";
 
-export default function TodoList(){
+export default function TodoList({isLogin,setIsLogin}){
    const [taskList,setTaskList] = useState([]);
    const [inputValue,setInputValue] = useState('');
    const [darkMode, setDarkMode] = useState(false);
@@ -24,11 +25,19 @@ export default function TodoList(){
    const handleDarkMode = () => {
       setDarkMode(!darkMode)
   }
+   function Logout(){
+      setIsLogin(false)
+   }
+   if(!isLogin){
+      return <Login/>
+   }
     return (
       <CommonContainer darkTheme={darkMode}>
+         <LogoutButton style={{position:'fixed',top:10}} onClick={Logout}>Logout</LogoutButton>
          <ThemeButton style={{ position: 'fixed', top: 10, right: 10 }} onClick={handleDarkMode}>
                   {darkMode ? 'Light mode' : 'Dark mode'}
          </ThemeButton>
+         
          <TodoContainer>
             <InputContainer>
                <h1 >To Do List</h1>
