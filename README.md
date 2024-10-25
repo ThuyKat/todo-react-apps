@@ -26,10 +26,11 @@ To apply React concepts and libraries to build a functional web application :
 - Sort tasks based on different criteria
 - Display task statistics (total tasks and completed tasks)
 - Toggle between dark and light mode for user interface
-
+**login page**
+![alt text](src/assets/login.png)
+**light mode**
 ![alt text](src/assets/todo-img.png)
-
-
+**dark mode**
 ![alt text](src/assets/dark-mode.png)
 
 # Development Tools 
