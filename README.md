@@ -1,3 +1,6 @@
+# To test the apps, enter below username and password:
+username: kat
+password: pass2
 # Project Objectives
 To apply React concepts and libraries to build a functional web application :
 - Create React project using Create React App with npx
