@@ -54,7 +54,11 @@ div{
 }
 
 `
-export default function ListContainer({taskList,deleteTask}){
+export default function ListContainer({taskList,handleDelete,searchValue,handleUpdate}){
+   
+    
+    const totalTaskDone = taskList.reduce((total,task)=>task.isDone?total+1:total,0);
+   
     if (!taskList.length) { // length == 0
         return <Container>
             <h4>Please add new task!</h4>
@@ -63,8 +67,12 @@ export default function ListContainer({taskList,deleteTask}){
 
     return(
         <Container>
+            <p>Total:{totalTaskDone}/{taskList.length}</p>
             {
-                taskList.map((task,index) => (<TodoItem key={index} task={task} deleteTask={deleteTask} id={index}/>))
+                taskList
+                .filter((task)=>task.title.toLowerCase().includes(searchValue))
+                .sort((a,b) => (a.isDone == b.isDone)? b.id - a.id :a.isDone - b.isDone)
+                .map((task,index) => (<TodoItem key={index} task={task} deleteTask={handleDelete} id={index} handleUpdate={handleUpdate}/>))
             }
         </Container>
     )
