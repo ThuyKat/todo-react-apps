@@ -26,6 +26,7 @@ To apply React concepts and libraries to build a functional web application :
 
 ![alt text](src/assets/todo-img.png)
 
+
 ![alt text](src/assets/dark-mode.png)
 
 # Development Tools 
