@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import backgroundImg from '../../assets/background-img.jpg'
 
 export const CommonInput = styled.input`
     width:calc(100% - 70px);
@@ -60,12 +60,19 @@ export const FormContainer=styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
+    background-image:url(${backgroundImg});
+    background-size:cover;
+    background-position: center;
+    background-blend-mode: overlay;
 `
 export const Form = styled.form`
     padding:200px 20px;
     min-width:300px;
-    background-color: #E6F7FF;
+    
+    background-color: rgba(144, 238, 144, 0.9);
+    background-blend-mode: overlay; 
     border-radius: 10px; 
+    box-shadow:1px 1px 5px grey;
         div{
         margin-bottom:10px;
         display:flex;
@@ -80,20 +87,25 @@ export const Form = styled.form`
             border-radius:5px;
             border: solid 0.5px #F0F0F0 ;
             height:25px;
-            
+            padding:0.5em;
+            margin-bottom:1em;
         }
     }
     button{
+        font-weight:600;
         display:block;
-        margin-left:auto;
-        padding: 10px;
+        margin:auto;
+        margin-bottom:1em;
+        padding: 10px 20px;
         background-color: #007bff;
         color: white;
         border: none;
         cursor: pointer;
         border-radius:5px;
+        min-width:30%;
         &:hover {
-            background-color: #0056b3;
+            background-color: orange;
+            color:blue;
         }
     }
 

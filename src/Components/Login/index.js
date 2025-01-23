@@ -82,8 +82,10 @@ function Login() {
             onChange={handleInputChange}
           />
         </div>
+        <div>
         <button type="submit">Submit</button>
         <button type="button" onClick={handleGuestLogin}>Continue As Guest</button>
+        </div>
       </Form>
     </FormContainer>
   );
